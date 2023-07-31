@@ -302,6 +302,8 @@
   }
 </style>
 
+
+
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
@@ -326,6 +328,22 @@
 </div>
 
 <div class="content" role="main">
+
+  <div class="col-md-12 pb-3 floating-label">
+    <input class="form-control floating-input" type="text" placeholder=" ">
+    <label>Description</label>
+  </div>
+
+  <div class="dropdown w-100 mb-4">
+    <input class="cursor-pointer w-100 selected-item" type="text" data-toggle="dropdown" aria-expanded="false"
+        placeholder="Select Item" id="selectedItem" />
+    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+        <label class="item-label">Item List</label>
+        <li class="dropdown-item" *ngFor="let item of itemArray" (click) = "onSelect(item);" >{{item}}</li>
+        <input class="form-control type-item new-item" type="text" placeholder="Enter text here" (keyup.enter)="onEnter()" id="newValue"  />
+            <!-- <button class="close-icon" type="reset"></button> -->
+    </ul>
+</div>
 
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
